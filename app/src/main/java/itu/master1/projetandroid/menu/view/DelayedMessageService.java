@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 import android.view.Menu;
-
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,8 +16,7 @@ import java.util.List;
 
 import itu.master1.projetandroid.R;
 import itu.master1.projetandroid.menu.model.Content;
-import itu.master1.projetandroid.menu.view.detail.CourseDetailActivity;
-import itu.master1.projetandroid.menu.viewmodel.CoursesViewModel;
+import itu.master1.projetandroid.menu.view.detail.TourismeDetailActivity;
 
 public class DelayedMessageService extends IntentService {
     public static final String EXTRA_FREQUENCY = "EXTRA_FREQUENCY";
@@ -69,8 +67,8 @@ public class DelayedMessageService extends IntentService {
                 .setContentText(text).setPriority(NotificationCompat.PRIORITY_HIGH).setVibrate(new long[]{0, 1000})
                 .setAutoCancel(true);
 
-        Intent actionIntent = new Intent(this, CourseDetailActivity.class);
-        actionIntent.putExtra(CourseDetailActivity.EXTRA_CONTENT, content);
+        Intent actionIntent = new Intent(this, TourismeDetailActivity.class);
+        actionIntent.putExtra(TourismeDetailActivity.EXTRA_CONTENT, content);
 
         PendingIntent actionPendingIntent = PendingIntent.getActivity(this, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 

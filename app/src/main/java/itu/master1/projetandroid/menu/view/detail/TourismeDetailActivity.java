@@ -1,27 +1,8 @@
 package itu.master1.projetandroid.menu.view.detail;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat$InspectionCompanion;
-import androidx.core.view.GravityCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,24 +12,16 @@ import android.widget.Toast;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerSupportFragmentX;
 
 import itu.master1.projetandroid.R;
 import itu.master1.projetandroid.menu.model.Content;
 import itu.master1.projetandroid.menu.view.DownLoadImageTask;
-import itu.master1.projetandroid.menu.view.MenuActivity;
-import itu.master1.projetandroid.menu.viewmodel.CoursesViewModel;
 
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerSupportFragmentX;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.Locale;
 
-public class CourseDetailActivity extends YouTubeBaseActivity {
+public class TourismeDetailActivity extends YouTubeBaseActivity {
     // TODO: get API key from connexion
     String api_key = "AIzaSyBcHxvKqApJAm_MJ0CfVNtgkB88FVDOzjM";
     private Content content;
@@ -66,7 +39,7 @@ public class CourseDetailActivity extends YouTubeBaseActivity {
         Content content = (Content)getIntent().getExtras().get(EXTRA_CONTENT);
 
         setContent(content);
-        //CourseDetailFragment frag = (CourseDetailFragment) getSupportFragmentManager().findFragmentById(R.id.id_frag_course_detail);
+        //TourismeDetailFragment frag = (TourismeDetailFragment) getSupportFragmentManager().findFragmentById(R.id.id_frag_course_detail);
         //frag.setContent(content);
 
         imgContainer = (LinearLayout)findViewById(R.id.imgContainer);
@@ -126,7 +99,7 @@ public class CourseDetailActivity extends YouTubeBaseActivity {
         params.setMargins(0,0,0,16);
         params.gravity = Gravity.CENTER;
         for(int iI = 0; iI < content.getImages().length; iI++) {
-            ImageView img = new ImageView(CourseDetailActivity.this);
+            ImageView img = new ImageView(TourismeDetailActivity.this);
             img.setLayoutParams(params);
             img.setOnClickListener(new View.OnClickListener(){
                 @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menu.view.detail.CourseDetailActivity">
+    tools:context=".menu.view.detail.TourismeDetailActivity">
 
    <com.google.android.youtube.player.YouTubePlayerView
         android:layout_width="match_parent"
@@ -84,7 +84,7 @@
    -->
 <!--
    <androidx.fragment.app.FragmentContainerView
-     android:name="itu.master1.projetandroid.menu.view.detail.CourseDetailFragment"
+     android:name="itu.master1.projetandroid.menu.view.detail.TourismeDetailFragmentnt"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
      android:id="@+id/id_frag_course_detail">

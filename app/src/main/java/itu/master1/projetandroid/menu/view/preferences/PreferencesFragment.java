@@ -10,9 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.ListPreference;
@@ -25,28 +25,31 @@ import java.util.List;
 
 import itu.master1.projetandroid.R;
 import itu.master1.projetandroid.authentication.view.ConnexionActivity;
+
 import itu.master1.projetandroid.menu.model.Content;
 import itu.master1.projetandroid.menu.view.DelayedMessageService;
+import itu.master1.projetandroid.menu.viewmodel.TourismeViewModel;
 import itu.master1.projetandroid.menu.view.MenuActivity;
-import itu.master1.projetandroid.menu.view.detail.CourseDetailActivity;
 import itu.master1.projetandroid.menu.view.list.ContentAdapter;
-import itu.master1.projetandroid.menu.viewmodel.CoursesViewModel;
+import itu.master1.projetandroid.menu.view.detail.TourismeDetailActivity;
+
 import kotlinx.coroutines.Delay;
 
+
 public class PreferencesFragment extends PreferenceFragmentCompat {
-    private CoursesViewModel coursesViewModel;
+    private TourismeViewModel tourismeViewModel;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences, rootKey);
 
-        coursesViewModel = new ViewModelProvider(this.getActivity()).get(CoursesViewModel.class);
+        tourismeViewModel = new ViewModelProvider(this.getActivity()).get(TourismeViewModel.class);
 
         // Notification preference
         SwitchPreferenceCompat prefNofit = findPreference("notifications");
 
         Intent intent = new Intent(getActivity(), DelayedMessageService.class);
-        coursesViewModel.getContentsLive().observe(this, new Observer<List<Content>>() {
+        tourismeViewModel.getContentsLive().observe(this, new Observer<List<Content>>() {
             @Override
             public void onChanged(List<Content> contents) {
                 if(contents != null && contents.size() > 0) {

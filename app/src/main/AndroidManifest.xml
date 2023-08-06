@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projetandroid">
         <activity
-            android:name=".menu.view.detail.CourseDetailActivity"
+            android:name=".menu.view.detail.TourismeDetailActivity"
             android:exported="false"
             android:parentActivityName=".menu.view.MenuActivity"
             />

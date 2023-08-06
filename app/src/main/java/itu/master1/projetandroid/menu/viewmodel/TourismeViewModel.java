@@ -5,7 +5,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.ArrayList;
@@ -20,9 +19,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CoursesViewModel extends AndroidViewModel {
+public class TourismeViewModel extends AndroidViewModel {
     private MutableLiveData<List<Content>> contents = new MutableLiveData<>();
-    public CoursesViewModel(@NonNull Application application) {
+    public TourismeViewModel(@NonNull Application application) {
         super(application);
         this.findContentList();
     }

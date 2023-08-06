@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import itu.master1.projetandroid.R;
 import itu.master1.projetandroid.authentication.view.ConnexionActivity;
 import itu.master1.projetandroid.global.MyApplication;
-import itu.master1.projetandroid.menu.view.list.CoursesFragment;
+import itu.master1.projetandroid.menu.view.list.TourismeFragment;
 import itu.master1.projetandroid.menu.view.preferences.PreferencesFragment;
 import itu.master1.projetandroid.menu.view.profile.ProfileFragment;
 import kotlinx.coroutines.Delay;
@@ -30,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         FragmentManager ft = getSupportFragmentManager();
-        ft.beginTransaction().replace(R.id.id_frag_menu_container, CoursesFragment.class, null).commit();
+        ft.beginTransaction().replace(R.id.id_frag_menu_container, TourismeFragment.class, null).commit();
 
 
         configureBottomView();
@@ -43,7 +43,7 @@ public class MenuActivity extends AppCompatActivity {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             switch (id) {
                 case R.id.action_menu:
-                    ft.replace(R.id.id_frag_menu_container, CoursesFragment.class, null);
+                    ft.replace(R.id.id_frag_menu_container, TourismeFragment.class, null);
                     break;
                 case R.id.action_settings:
                     ft.replace(R.id.id_frag_menu_container, PreferencesFragment.class, null);
